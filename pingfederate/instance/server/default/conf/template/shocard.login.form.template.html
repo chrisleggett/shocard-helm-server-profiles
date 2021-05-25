@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+#*
+The server renders this HTML page in an end-user's browser
+to display the username and list of core and extended attributes
+
+Velocity variables (identified by the $ character) are generated
+at runtime by the server.
+
+Change text or formatting as needed. Modifying Velocity statements
+is not recommended as it may interfere with expected server behavior.
+*#
+
+#set ( $d = "$")
+
+<html lang="$locale.getLanguage()" dir="ltr">
+<head>
+  <script src="/assets/scripts/jquery-2.2.0.min.js"></script>
+  <script src="/assets/scripts/poll.js"></script>
+  <script type="text/javascript">
+
+        function postSubmit()
+        {
+            document.forms[0]['$submit'].value = 'clicked';
+            document.forms[0].submit();
+        }
+
+        function postCancel()
+        {
+            document.forms[0]['$cancel'].value = 'clicked';
+            document.forms[0].submit();
+        }
+
+        function postOnReturn(e)
+        {
+            var keycode;
+            if (window.event) keycode = window.event.keyCode;
+            else if (e) keycode = e.which;
+            else return true;
+
+            if (keycode == 13)
+            {
+                document.forms[0].submit();
+                return false;
+            }
+            else
+                return true;
+         }
+
+         function setFocus()
+         {
+            var platform = navigator.platform;
+            if(platform != null && platform.indexOf("iPhone") == -1)
+            {
+                document.getElementById('username').focus();
+            }
+         }
+
+
+
+    </script>
+  <base href="$CurrentPingFedBaseURL"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Shocard Login</title>
+  <link rel="stylesheet" media="all" type="text/css" href="assets/css/main.css"/>
+</head>
+<body onload="doPoll($invitationCode)">
+<div class="ping-container ping-signin">
+  <div class="ping-header">
+    Shocard
+  </div>
+  <div class="ping-body-container">
+    <div>
+      <p style="font-size: 18px;">
+        You will need to first download the Ping Shocard App from either the <strong>AppStore</strong> or <strong>GooglePlay</strong>.
+        <br />
+        <br />
+        On your mobile device, download the app by clicking the links below.<br><br>
+      </p>
+      <div >
+        <a href="https://itunes.apple.com/us/app/shobadge/id1243205791">
+          <img src="$itunesLogo" >
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.shocard.shobadge">
+          <img src="$googlePlayLogo" >
+        </a>
+      </div>
+      <p style="font-size: 18px;">
+        Scan the QR code to Login with Your shocard app
+      </p>
+      <ul>
+        <img src="$qrurl" width="100"/>
+      </ul>
+      <br><br>If you experience any issues, you can send a help request to your system
+      administrator.
+
+    </div>
+  </div>
+  <form method="POST" action="$resumePath" autocomplete="off">
+    <input type="hidden" name="$submit" value=""/>
+  </form>
+  <div class="ping-footer-container">
+    <div class="ping-footer">
+      <div class="ping-credits"></div>
+      <div class="ping-copyright">$templateMessages.getMessage("global.footerMessage")</div>
+    </div> <!-- .ping-footer -->
+  </div> <!-- .ping-footer-container -->
+</div> <!-- .ping-container -->
+</body>
+</html>
