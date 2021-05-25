@@ -2,7 +2,7 @@
 <EntityDescriptor entityID="https://localhost:9031" cacheDuration="PT1440M" xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:sid="urn:sourceid.org:saml2:local-metadata-extension:v2">
     <!--This block contains Ping's proprietary endpoints-->
     <Extensions>
-        <sid:SourceIDExtension BaseURL="https://localhost:9031" Saml1xId="localhost:default:entityId" WsFedID="" Saml1xSrcId="" DisableAutomaticConnectionValidation="false" DataStoreValidationInterval="300" RequestHeaderNameForCorrelationId="" CustomGlobalHttpHeaderName="" ClientIpHeaderIndex="last" ForwardedHostHeaderName="" ForwardedHostHeaderIndex="last" ProxyTerminatesHttpsConns="false" MetadataSigningKeyAlias="" MetadataSigningAlgorithm="" MetadataSigningKeyMD5Fingerprint="" ConfirmIdpSlo="false" ClientCertSSLHeaderName="" ClientCertChainSSLHeaderName="">
+        <sid:SourceIDExtension BaseURL="https://pingfederate-engine-shocard-idverse.ping-devops.com" Saml1xId="localhost:default:entityId" WsFedID="" Saml1xSrcId="" DisableAutomaticConnectionValidation="false" DataStoreValidationInterval="300" RequestHeaderNameForCorrelationId="" CustomGlobalHttpHeaderName="" ClientIpHeaderIndex="last" ForwardedHostHeaderName="" ForwardedHostHeaderIndex="last" ProxyTerminatesHttpsConns="false" MetadataSigningKeyAlias="" MetadataSigningAlgorithm="" MetadataSigningKeyMD5Fingerprint="" ConfirmIdpSlo="false" ClientCertSSLHeaderName="" ClientCertChainSSLHeaderName="">
             <sid:LocalPathsDescriptor Suffix=".ping" ResumePathPrefix="/resume">
                 <sid:IDPLocalPaths>
                     <!--This endpoint is used by an IdP application to ask
