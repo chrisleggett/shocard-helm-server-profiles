@@ -46,14 +46,6 @@ is not recommended as it may interfere with expected server behavior.
                 return true;
          }
 
-         function setFocus()
-         {
-            var platform = navigator.platform;
-            if(platform != null && platform.indexOf("iPhone") == -1)
-            {
-                document.getElementById('username').focus();
-            }
-         }
 
 
 
@@ -61,48 +53,78 @@ is not recommended as it may interfere with expected server behavior.
   <base href="$CurrentPingFedBaseURL"/>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <title>Shocard Login</title>
+  <title>$pluginTemplateMessages.getMessage("title") Login</title>
   <link rel="stylesheet" media="all" type="text/css" href="assets/css/main.css"/>
+  <style>
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+    .column {
+        flex: 50%;
+        padding: 5px;
+    }
+    .applecolumn {
+        flex: 50%;
+        padding: 15px;
+    }
+/* Clear floats after image containers */
+    .row {
+        display: flex;
+    }
+</style>
 </head>
 <body onload="doPoll($invitationCode)">
 <div class="ping-container ping-signin">
   <div class="ping-header">
-    Shocard
+    $pluginTemplateMessages.getMessage("title")
   </div>
   <div class="ping-body-container">
-    <div>
+    <p style="font-size: 18px;">
+      $pluginTemplateMessages.getMessage("loginHeaderMessage")
+    </p>
+    <img src="$qrCode"/>
+    <!--
       <p style="font-size: 18px;">
-        You will need to first download the Ping Shocard App from either the <strong>AppStore</strong> or <strong>GooglePlay</strong>.
-        <br />
-        <br />
         On your mobile device, download the app by clicking the links below.<br><br>
       </p>
-      <div >
-        <a href="https://itunes.apple.com/us/app/shobadge/id1243205791">
-          <img src="$itunesLogo" >
-        </a>
-        <a href="https://play.google.com/store/apps/details?id=com.shocard.shobadge">
-          <img src="$googlePlayLogo" >
-        </a>
-      </div>
-      <p style="font-size: 18px;">
-        Scan the QR code to Login with Your shocard app
-      </p>
-      <ul>
-        <img src="$qrurl" width="100"/>
-      </ul>
-      <br><br>If you experience any issues, you can send a help request to your system
-      administrator.
-
-    </div>
+      <div class="row">
+          <div class="applecolumn">
+            <a href="https://itunes.apple.com/us/app/shobadge/id1243205791">
+                <img src="assets/images/Download_on_the_App_Store_Badge.svg" style="width:83%" >
+            </a>
+          </div>
+          <div class="column">
+            <a href="https://play.google.com/store/apps/details?id=com.shocard.shobadge">
+                <img src="assets/images/google-play-badge.png" style="width:100%">
+            </a>
+          </div>
+       </div>
+       <br>If you experience any issues, you can send a help request to your system
+       administrator.
   </div>
-  <form method="POST" action="$resumePath" autocomplete="off">
-    <input type="hidden" name="$submit" value=""/>
-  </form>
+-->
+    <form method="POST" action="$resumePath" autocomplete="off">
+      <div style="text-align:center;">
+        <div style="margin:20px 20px; display:inline-block; line-height: 60px;">
+          <a href="javascript:void(0)" onclick="postSubmit();" class="ping-button normal allow" title="$pluginTemplateMessages.getMessage("registerButtonTitle")">
+          $pluginTemplateMessages.getMessage("registerButtonTitle")
+          </a>
+        </div>
+        <div style="margin:20px 20px; display:inline-block; line-height: 60px;">
+          <a href="javascript:void(0)" onclick="postCancel();" class="ping-button blue deny" title="$pluginTemplateMessages.getMessage("cancelButtonTitle")">
+          $pluginTemplateMessages.getMessage("cancelButtonTitle")
+          </a>
+        </div>
+      </div>
+      <input type="hidden" name="$submit" value=""/>
+      <input type="hidden" name="$cancel" value=""/>
+    </form>
+  </div>
+  <br><br>
   <div class="ping-footer-container">
     <div class="ping-footer">
       <div class="ping-credits"></div>
+      <!--
       <div class="ping-copyright">$templateMessages.getMessage("global.footerMessage")</div>
+      -->
     </div> <!-- .ping-footer -->
   </div> <!-- .ping-footer-container -->
 </div> <!-- .ping-container -->
