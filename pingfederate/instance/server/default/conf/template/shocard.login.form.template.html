@@ -46,9 +46,6 @@ is not recommended as it may interfere with expected server behavior.
                 return true;
          }
 
-
-
-
     </script>
   <base href="$CurrentPingFedBaseURL"/>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -57,7 +54,7 @@ is not recommended as it may interfere with expected server behavior.
   <link rel="stylesheet" media="all" type="text/css" href="assets/css/main.css"/>
   <style>
 /* The Modal (background) */
-    .modal {
+    .reg-modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -73,7 +70,7 @@ is not recommended as it may interfere with expected server behavior.
     }
 
     /* Modal Content */
-    .modal-content {
+    .reg-modal-content {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
@@ -116,7 +113,7 @@ is not recommended as it may interfere with expected server behavior.
     }
 </style>
 </head>
-<body id="body">
+<body id="body" onload="doPoll($sessionId")>
 <div class="ping-container ping-signin">
   <div class="ping-header">
     $pluginTemplateMessages.getMessage("title")
@@ -127,9 +124,10 @@ is not recommended as it may interfere with expected server behavior.
     </p>
     <img src="$loginQrCode"/>
     <!-- The Modal -->
-    <div id="myModal" class="modal">
+    #if($enableRegistration)
+    <div id="registrationModal" class="reg-modal">
       <!-- Modal content -->
-      <div class="modal-content">
+      <div class="reg-modal-content">
         <span class="close">&times;</span>
         <p style="font-size: 18px;">
           $pluginTemplateMessages.getMessage("registerHeaderMessage")
@@ -152,13 +150,16 @@ is not recommended as it may interfere with expected server behavior.
         </div>
       </div>
     </div>
+    #end
     <form method="POST" action="$resumePath" autocomplete="off">
       <div style="text-align:center;">
+        #if($enableRegistration)
         <div style="margin:20px 20px; display:inline-block; line-height: 60px;">
           <a href="javascript:void(0)" id="registerbtn" class="ping-button normal allow" title="$pluginTemplateMessages.getMessage("registerButtonTitle")">
           $pluginTemplateMessages.getMessage("registerButtonTitle")
           </a>
         </div>
+        #end
         <div style="margin:20px 20px; display:inline-block; line-height: 60px;">
           <a href="javascript:void(0)" onclick="postCancel();" class="ping-button blue deny" title="$pluginTemplateMessages.getMessage("cancelButtonTitle")">
           $pluginTemplateMessages.getMessage("cancelButtonTitle")
@@ -182,7 +183,7 @@ is not recommended as it may interfere with expected server behavior.
 
 <script>
     // Get the modal
-    var modal = document.getElementById("myModal");
+    var modal = document.getElementById("registrationModal");
     var btn = document.getElementById("registerbtn");
 
     // Get the <span> element that closes the modal

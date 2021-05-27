@@ -1,12 +1,12 @@
 
 async function doPoll(code){
     await sleep(2000);
-    $.post('/ext/kycstatus', 'code=' + code , function(data) {
-        console.log("Current status: " + data.KYCStatus);
-        if(data.KYCStatus == "KYC Complete"){
+    $.post('/ext/shocard/messagestatus', 'code=' + code , function(data) {
+        console.log("Current status: " + data.messageStatus);
+        if(data.messageStatus == "LoginSuccess"){
             document.forms[0].submit();
         }
-        if(data.KYCStatus == "Pending KYC"){
+        if(data.KYCStatus == "RegistrationSuccess"){
             document.forms[0].submit();
         }
         setTimeout(doPoll(code),30000);
