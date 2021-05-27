@@ -5,7 +5,7 @@ async function doPoll(logincode, regcode){
     var modal = document.getElementById("registrationModal");
     var code = "";
 
-    if(modal.sytle.display == "block"){
+    if(modal.style.display == "block"){
         code = regcode;
     } else {
         code = logincode;
