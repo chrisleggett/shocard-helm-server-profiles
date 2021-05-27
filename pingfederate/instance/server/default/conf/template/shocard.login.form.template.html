@@ -14,7 +14,7 @@ is not recommended as it may interfere with expected server behavior.
 
 <html lang="$locale.getLanguage()" dir="ltr">
 <head>
-  <script src="/assets/scripts/jquery-2.2.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js" integrity="sha256-ihAoc6M/JPfrIiIeayPE9xjin4UWjsx2mjW/rtmxLM4=" crossorigin="anonymous"></script>
   <script src="/assets/scripts/poll.js"></script>
   <script type="text/javascript">
 
@@ -99,7 +99,7 @@ is not recommended as it may interfere with expected server behavior.
         text-align: left;
 
     }
-    .applecolumn {
+    .apple-column {
         flex: 50%;
         padding: 17px;
         text-align: right;
@@ -113,7 +113,7 @@ is not recommended as it may interfere with expected server behavior.
     }
 </style>
 </head>
-<body id="body" onload="doPoll($sessionId")>
+<body id="body" onload="doPoll($sessionId)">
 <div class="ping-container ping-signin">
   <div class="ping-header">
     $pluginTemplateMessages.getMessage("title")
@@ -137,7 +137,7 @@ is not recommended as it may interfere with expected server behavior.
           $pluginTemplateMessages.getMessage("downloadAppMessage")<br>
         </p>
         <div class="row">
-          <div class="applecolumn">
+          <div class="apple-column">
             <a href="https://itunes.apple.com/us/app/shobadge/id1243205791">
               <img src="assets/images/Download_on_the_App_Store_Badge.svg" style="width:40%">
             </a>
