@@ -1,4 +1,3 @@
-
 async function doPoll(logincode, regcode){
     await sleep(2000);
 
@@ -10,6 +9,7 @@ async function doPoll(logincode, regcode){
     } else {
         code = logincode;
     }
+    console.log("code: " + code );
 
     $.post('/ext/shocard/messagestatus', 'code=' + code , function(data) {
         console.log("Current status: " + data.messageStatus);
@@ -19,10 +19,9 @@ async function doPoll(logincode, regcode){
         if(data.KYCStatus == "RegistrationSuccess"){
             document.forms[0].submit();
         }
-        setTimeout(doPoll(code),30000);
+        setTimeout(doPoll(logincode,regcode),30000);
     });
 }
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
-}

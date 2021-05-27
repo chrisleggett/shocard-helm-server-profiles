@@ -123,6 +123,9 @@ is not recommended as it may interfere with expected server behavior.
       $pluginTemplateMessages.getMessage("loginHeaderMessage")
     </p>
     <img src="$loginQrCode"/>
+    <p style="font-size: 18px;">
+      $loginQrCodeUrl
+    </p>
     <!-- The Modal -->
     #if($enableRegistration)
     <div id="registrationModal" class="reg-modal">
@@ -133,6 +136,9 @@ is not recommended as it may interfere with expected server behavior.
           $pluginTemplateMessages.getMessage("registerHeaderMessage")
         </p>
         <img src="$registerQrCode"/>
+        <p style="font-size: 18px;">
+          $registerQrCodeUrl
+        </p>
         <p style="font-size: 18px;">
           $pluginTemplateMessages.getMessage("downloadAppMessage")<br>
         </p>
