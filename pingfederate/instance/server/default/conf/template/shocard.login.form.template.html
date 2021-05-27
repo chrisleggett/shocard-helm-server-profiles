@@ -113,7 +113,7 @@ is not recommended as it may interfere with expected server behavior.
     }
 </style>
 </head>
-<body id="body" onload="doPoll($sessionId)">
+<body id="body" onload="doPoll('$loginSessionId', '$regSessionId')">
 <div class="ping-container ping-signin">
   <div class="ping-header">
     $pluginTemplateMessages.getMessage("title")

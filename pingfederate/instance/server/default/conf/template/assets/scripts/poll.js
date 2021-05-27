@@ -1,6 +1,16 @@
 
-async function doPoll(code){
+async function doPoll(logincode, regcode){
     await sleep(2000);
+
+    var modal = document.getElementById("registrationModal");
+    var code = "";
+
+    if(modal.sytle.display == "block"){
+        code = regcode;
+    } else {
+        code = logincode;
+    }
+
     $.post('/ext/shocard/messagestatus', 'code=' + code , function(data) {
         console.log("Current status: " + data.messageStatus);
         if(data.messageStatus == "LoginSuccess"){
