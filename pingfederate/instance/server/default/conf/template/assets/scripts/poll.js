@@ -14,6 +14,7 @@ async function doPoll(logincode, regcode){
     $.post('/ext/shocard/messagestatus', 'code=' + code , function(data) {
         console.log("Current status: " + data.action);
         if(data.action == "proceed"){
+            document.getElementById("pf.submit").value = "proceed";
             document.forms[0].submit();
         }
         setTimeout(doPoll(logincode,regcode),30000);
