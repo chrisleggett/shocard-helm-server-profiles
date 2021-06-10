@@ -13,7 +13,7 @@ async function doPoll(logincode, regcode){
 
     $.post('/ext/shocard/messagestatus', 'code=' + code , function(data) {
         console.log("Current status: " + data.action);
-        if(data.action != null){
+        if(data.action != "poll"){
             document.getElementById("pf.submit").value = data.action;
             document.forms[0].submit();
         }
