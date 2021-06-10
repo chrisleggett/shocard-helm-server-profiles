@@ -7,6 +7,8 @@
         <urn:Field name="PingOne Worker App Client Secret">8eAuClJJFGm0RnKRRGcrP_ZgRmLjC9Ii_dgKOpuJ~k4WLem9J0d14b7jGxz5--tX</urn:Field>
         <urn:Field name="HTML Form Template Name">shocard.login.form.template.html</urn:Field>
         <urn:Field name="Enable Registration">true</urn:Field>
+        <urn:Field name="Display Claim Verification Form">true</urn:Field>
+        <urn:Field name="View Shared Claims HTML Form Name">shocard.shared.claims.html</urn:Field>
         <urn:Field name="PingOne API Base URL">https://api.pingone.com/v1/</urn:Field>
         <urn:Field name="PingOne Authentication Base URL">https://auth.pingone.com/</urn:Field>
     </urn:Fields>
