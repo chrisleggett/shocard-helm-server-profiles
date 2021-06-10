@@ -13,15 +13,8 @@ async function doPoll(logincode, regcode){
 
     $.post('/ext/shocard/messagestatus', 'code=' + code , function(data) {
         console.log("Current status: " + data.action);
-        if(data.action == "proceed"){
-            if(modal.style.display == "block"){
-                document.getElementById("pf.submit").value = "register_proceed";
-            } else {
-                document.getElementById("pf.submit").value = "login_proceed";
-            }
-            document.forms[0].submit();
-        } else if(data.action == "error"){
-            document.getElementById("pf.submit").value = "error";
+        if(data.action != null){
+            document.getElementById("pf.submit").value = data.action;
             document.forms[0].submit();
         }
         setTimeout(doPoll(logincode,regcode),30000);
