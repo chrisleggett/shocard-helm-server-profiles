@@ -25,15 +25,28 @@
                 <urn:Field name="ShoCard Attribute Name">Last Name</urn:Field>
             </urn:Row>
             <urn:Row defaultRow="false">
-                <urn:Field name="ShoCard Type">U.S. Driver License</urn:Field>
+                <urn:Field name="ShoCard Type">Profile ShoCard</urn:Field>
                 <urn:Field name="ShoCard Attribute Name">Birth Date</urn:Field>
+            </urn:Row>
+            <urn:Row defaultRow="false">
+                <urn:Field name="ShoCard Type">U.S. Driver License</urn:Field>
+                <urn:Field name="ShoCard Attribute Name">Country</urn:Field>
             </urn:Row>
         </urn:Table>
     </urn:Tables>
-    <urn:ExtendedContractAttributes/>
+    <urn:ExtendedContractAttributes>
+        <urn:AttributeName>firstName</urn:AttributeName>
+        <urn:AttributeName>lastName</urn:AttributeName>
+        <urn:AttributeName>dateOfBirth</urn:AttributeName>
+        <urn:AttributeName>email</urn:AttributeName>
+    </urn:ExtendedContractAttributes>
     <urn:UniqueKeyField>shocard_id</urn:UniqueKeyField>
     <urn:AttributeMapping>
+        <urn1:AttributeMap Name="firstName" Type="Adapter" Value="firstName" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+        <urn1:AttributeMap Name="lastName" Type="Adapter" Value="lastName" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
         <urn1:AttributeMap Name="shocard_id" Type="Adapter" Value="shocard_id" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+        <urn1:AttributeMap Name="dateOfBirth" Type="Adapter" Value="dateOfBirth" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+        <urn1:AttributeMap Name="email" Type="Text" Value="leggettc@gmail.com" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
         <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
     </urn:AttributeMapping>
 </urn:AdapterConfiguration>

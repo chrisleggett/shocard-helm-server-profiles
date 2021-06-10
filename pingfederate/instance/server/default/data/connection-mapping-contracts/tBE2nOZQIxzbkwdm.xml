@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c2c:c2cContract id="tBE2nOZQIxzbkwdm" name="shocardcontract" xmlns:c2c="http://pingidentity.com/2014/10/c2cContracts">
+    <c2c:extendedAttributes>
+        <c2c:attr name="firstName"/>
+        <c2c:attr name="lastName"/>
+        <c2c:attr name="shocardId"/>
+        <c2c:attr name="birthDate"/>
+        <c2c:attr name="email"/>
+    </c2c:extendedAttributes>
+</c2c:c2cContract>
