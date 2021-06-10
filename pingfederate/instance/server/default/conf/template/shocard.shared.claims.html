@@ -135,11 +135,10 @@ is not recommended as it may interfere with expected server behavior.
             <div style="text-align:center;">
                 <div style="margin:20px 20px; display:inline-block; line-height: 60px;">
                     <table>
-                        #set ($map = $claimmap.getMap() )
-                        #foreach ($mapEntry in $map.entrySet())
+                        #foreach ($claimkey in $claimmap.keySet())
                         <tr>
-                            <td>$mapEntry.key</td>
-                            <td>$mapEntry.value</td>
+                            <td><b>$claimkey</b></td>
+                            <td>$claimmap.get($claimkey)</td>
                         </tr>
                         #end
                     </table>
@@ -159,5 +158,12 @@ is not recommended as it may interfere with expected server behavior.
         </div> <!-- .ping-footer -->
     </div> <!-- .ping-footer-container -->
 </div> <!-- .ping-container -->
+<script>
+
+window.onload=function(){
+    window.setTimeout(document.cartCheckout.submit.bind(document.cartCheckout), 3000);
+};
+
+</script>
 </body>
 </html>
