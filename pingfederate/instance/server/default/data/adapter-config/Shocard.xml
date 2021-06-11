@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urn:AdapterConfiguration authnCtxClassRef="" isInheritAttributeSettings="false" isInheritAttributeMapping="false" maskOgnlValues="false" uniqueUserKeyField="shocard_id" isInheritExtendedContractAttributes="false" name="Shocard" xmlns:urn="urn:sourceid.org:saml2:adapter:conf">
     <urn:Fields>
-        <urn:Field name="PingOne Connection">EbwQzU63hsEnA3MDlY4aas|5e4d3f4d-58fe-4a63-9a7b-f6b717228084</urn:Field>
+        <urn:Field name="PingOne Connection">mHCTUMkVUF6um3t7a5W1SS|e4b95dd3-a8e6-4507-80ab-d8bd6076560c</urn:Field>
         <urn:Field name="PingOne Envrionment ID">2fd8c35a-b643-48ed-ab28-264bbb4fc56a</urn:Field>
         <urn:Field name="PingOne Worker App Client ID">69ad71bf-f6af-4216-9d9f-64eae408dfea</urn:Field>
         <urn:Field name="PingOne Worker App Client Secret">8eAuClJJFGm0RnKRRGcrP_ZgRmLjC9Ii_dgKOpuJ~k4WLem9J0d14b7jGxz5--tX</urn:Field>
