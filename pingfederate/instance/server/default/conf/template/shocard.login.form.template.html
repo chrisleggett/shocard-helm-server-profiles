@@ -121,12 +121,14 @@ is not recommended as it may interfere with expected server behavior.
     <p style="font-size: 18px;">
       $pluginTemplateMessages.getMessage("loginHeaderMessage")
     </p>
-    <div style="align:center; display:block">
+    <br>
+    <br>
+    <div style="align:center; display:block; margin: 0 auto">
       <div style="display:inline-block; line-height: 0;">
         <img src="$loginQrCode" style="display:block;">
       </div>
-      <div style="display:inline-block; line-height: 0; align:center">
-        <img src="assets/images/ShoCardLogoVert.png" style="display:block; height:170px;">
+      <div style="display:inline-block; line-height: 0;">
+        <img src="assets/images/ShoCardLogoVert.png" style="display:block; height:175px;">
       </div>
     </div>
 
@@ -139,7 +141,14 @@ is not recommended as it may interfere with expected server behavior.
         <p style="font-size: 18px;">
           $pluginTemplateMessages.getMessage("registerHeaderMessage")
         </p>
-        <img src="$registerQrCode"/><img src="assets/images/ShoCardLogoVert.png" style="height:25%"/>
+        <div style="align:center; display:block; margin: 0 auto">
+          <div style="display:inline-block; line-height: 0;">
+            <img src="$registerQrCode" style="display:block;">
+          </div>
+          <div style="display:inline-block; line-height: 0;">
+            <img src="assets/images/ShoCardLogoVert.png" style="display:block; height:175px;">
+          </div>
+        </div>
         <p style="font-size: 18px;">
           $pluginTemplateMessages.getMessage("downloadAppMessage")<br>
         </p>
@@ -158,6 +167,7 @@ is not recommended as it may interfere with expected server behavior.
       </div>
     </div>
     #end
+    <br>
     <form method="POST" action="$resumePath" autocomplete="off">
       <div style="text-align:center;">
         #if($enableRegistration)
