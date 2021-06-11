@@ -115,13 +115,13 @@ is not recommended as it may interfere with expected server behavior.
 <body id="body" onload="doPoll('$loginSessionId', '$regSessionId')">
 <div class="ping-container ping-signin">
   <div class="ping-header">
-    $pluginTemplateMessages.getMessage("title")
+    <img src="assets/images/ShoCardLogo.png" style="width:50%"/>
   </div>
   <div class="ping-body-container">
     <p style="font-size: 18px;">
       $pluginTemplateMessages.getMessage("loginHeaderMessage")
     </p>
-    <img src="$loginQrCode"/>
+    <img src="$loginQrCode"/><img src="assets/images/ShoCardLogoVert.png" style="height:25%"/>
     <!-- The Modal -->
     #if($enableRegistration)
     <div id="registrationModal" class="reg-modal">
@@ -131,7 +131,7 @@ is not recommended as it may interfere with expected server behavior.
         <p style="font-size: 18px;">
           $pluginTemplateMessages.getMessage("registerHeaderMessage")
         </p>
-        <img src="$registerQrCode"/>
+        <img src="$registerQrCode"/><img src="assets/images/ShoCardLogoVert.png" style="height:25%"/>
         <p style="font-size: 18px;">
           $pluginTemplateMessages.getMessage("downloadAppMessage")<br>
         </p>
