@@ -20,7 +20,7 @@
     </md:Extensions>
     <md:SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol" AuthnRequestsSigned="false" WantAssertionsSigned="true" SignResponseAsRequired="false">
         <md:Extensions>
-            <urn:RoleExtension ArtifactTimeoutSeconds="60" LastModified="2021-06-09T15:24:26.573Z">
+            <urn:RoleExtension ArtifactTimeoutSeconds="60" LastModified="2021-06-11T22:23:22.628Z">
                 <urn:IncomingBindings Artifact="false" POST="true" Redirect="true" SOAP="false"/>
                 <urn:EnabledProfiles IDPInitiatedSSO="true" IDPInitiatedSLO="false" SPInitiatedSSO="true" SPInitiatedSLO="false"/>
                 <urn:SP AssertionValidityAfterMinutes="5" AssertionValidityBeforeMinutes="5" ConnectionTargetType="Standard" EnableCDCDuringSSO="false">
@@ -29,9 +29,8 @@
                             <urn:AttributeMap Name="firstName" Type="Authentication Policy Contract" Value="firstName"/>
                             <urn:AttributeMap Name="lastName" Type="Authentication Policy Contract" Value="lastName"/>
                             <urn:AttributeMap Name="shocardId" Type="Authentication Policy Contract" Value="shocardId"/>
-                            <urn:AttributeMap Name="SAML_SUBJECT" Type="Authentication Policy Contract" Value="email"/>
+                            <urn:AttributeMap Name="SAML_SUBJECT" Type="Authentication Policy Contract" Value="shocardId"/>
                             <urn:AttributeMap Name="birthDate" Type="Authentication Policy Contract" Value="birthDate"/>
-                            <urn:AttributeMap Name="email" Type="Authentication Policy Contract" Value="email"/>
                             <urn:TokenAuthorizationIssuanceCriteria/>
                         </urn:DefaultAttributeMapping>
                     </urn:C2cContractToAssertionMapping>
@@ -47,7 +46,6 @@
             <md:RequestedAttribute Name="lastName" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"/>
             <md:RequestedAttribute Name="shocardId" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified"/>
             <md:RequestedAttribute Name="birthDate" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic"/>
-            <md:RequestedAttribute Name="email" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"/>
         </md:AttributeConsumingService>
     </md:SPSSODescriptor>
     <md:RoleDescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol" xsi:type="urn:PFAvailableCertsRoleDescriptorType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
