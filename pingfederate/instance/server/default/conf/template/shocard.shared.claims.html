@@ -131,7 +131,7 @@ is not recommended as it may interfere with expected server behavior.
             $pluginTemplateMessages.getMessage("sharedClaimsBodyMessage")
         </p>
 
-        <form method="POST" action="$resumePath" autocomplete="off">
+        <form method="POST" action="$resumePath" autocomplete="off" id="claimform" name="claimform">
             <div style="text-align:center;">
                 <div style="margin:20px 20px; display:inline-block; line-height: 60px;">
                     <table>
@@ -161,7 +161,7 @@ is not recommended as it may interfere with expected server behavior.
 <script>
 
 window.onload=function(){
-    window.setTimeout(document.cartCheckout.submit.bind(document.cartCheckout), 3000);
+    window.setTimeout(document.claimform.submit.bind(document.claimform), 3000);
 };
 
 </script>
