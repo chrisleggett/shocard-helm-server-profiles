@@ -121,7 +121,15 @@ is not recommended as it may interfere with expected server behavior.
     <p style="font-size: 18px;">
       $pluginTemplateMessages.getMessage("loginHeaderMessage")
     </p>
-    <img src="$loginQrCode"/><img src="assets/images/ShoCardLogoVert.png" style="height:25%"/>
+    <div style="align:center; display:block">
+      <div style="display:inline-block; line-height: 0;">
+        <img src="$loginQrCode" style="display:block;">
+      </div>
+      <div style="display:inline-block; line-height: 0; align:center">
+        <img src="assets/images/ShoCardLogoVert.png" style="display:block; height:170px;">
+      </div>
+    </div>
+
     <!-- The Modal -->
     #if($enableRegistration)
     <div id="registrationModal" class="reg-modal">
