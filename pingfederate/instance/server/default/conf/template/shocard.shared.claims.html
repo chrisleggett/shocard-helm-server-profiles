@@ -121,7 +121,7 @@ is not recommended as it may interfere with expected server behavior.
 
 </style>
 </head>
-<body id="body" name="body" >
+<body id="body" name="body" onload="doVerifyPoll();" >
 <div class="ping-container ping-signin">
     <div class="ping-header">
         <img src="assets/images/ShoCardLogo.png" style="width:50%"/>
@@ -164,13 +164,13 @@ is not recommended as it may interfere with expected server behavior.
 </div> <!-- .ping-container -->
 <script>
 
-window.onload=function(){
-    doVerifyPoll();
-    var x = document.getElementById("claimDiv");
-    if(x.style.display == "inline-block") {
-        window.setTimeout(document.claimform.submit.bind(document.claimform), 3000);
-    }
-};
+//window.onload=function(){
+//    doVerifyPoll();
+//    var x = document.getElementById("claimDiv");
+//    if(x.style.display == "inline-block") {
+//        window.setTimeout(document.claimform.submit.bind(document.claimform), 3000);
+//    }
+//};
 
 </script>
 </body>

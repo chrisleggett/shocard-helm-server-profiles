@@ -32,6 +32,7 @@ async function doVerifyPoll(){
             x.style.display = "none"
             var y = document.getElementById("claimDiv");
             y.style.display = "inline-block";
+            window.setTimeout(document.forms[0].submit.bind(document.forms[0]), 3000);
         }
         setTimeout(doVerifyPoll(),30000);
     });
