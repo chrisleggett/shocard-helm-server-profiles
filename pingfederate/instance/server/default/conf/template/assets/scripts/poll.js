@@ -1,5 +1,4 @@
-async function doPoll(logincode, regcode){
-    await sleep(2000);
+function doPoll(logincode, regcode){
 
     var modal = document.getElementById("registrationModal");
     var code = "";
@@ -22,8 +21,7 @@ async function doPoll(logincode, regcode){
 }
 
 
-async function doVerifyPoll(){
-    await sleep(2000);
+function doVerifyPoll(){
 
     $.get('/ext/shocard/verifystatus', function(data) {
         console.log("Current status: " + data.action);
