@@ -21,6 +21,19 @@ async function doPoll(logincode, regcode){
     });
 }
 
+
+async function doVerifyPoll(){
+    await sleep(2000);
+
+    $.get('/ext/shocard/verifystatus', function(data) {
+        console.log("Current status: " + data.action);
+        if(data.action != "poll"){
+            document.forms[0].submit();
+        }
+        setTimeout(doVerifyPoll(),30000);
+    });
+}
+
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }

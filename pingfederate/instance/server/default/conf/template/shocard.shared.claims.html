@@ -121,7 +121,7 @@ is not recommended as it may interfere with expected server behavior.
 
 </style>
 </head>
-<body id="body">
+<body id="body" name="body" onload="doVerifyPoll()">
 <div class="ping-container ping-signin">
     <div class="ping-header">
         <img src="assets/images/ShoCardLogo.png" style="width:50%"/>
@@ -164,21 +164,6 @@ is not recommended as it may interfere with expected server behavior.
 //    window.setTimeout(document.claimform.submit.bind(document.claimform), 3000);
 //};
 
-async function doPoll(){
-    await sleep(2000);
-
-    $.get('/ext/shocard/verifystatus', function(data) {
-        console.log("Current status: " + data.action);
-        if(data.action != "poll"){
-            document.forms[0].submit();
-        }
-        setTimeout(doPoll(),30000);
-    });
-}
-
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
 </script>
 </body>
 </html>
