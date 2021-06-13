@@ -2,21 +2,13 @@
 <urn:AdapterConfiguration authnCtxClassRef="" isInheritAttributeSettings="false" isInheritAttributeMapping="false" maskOgnlValues="false" uniqueUserKeyField="shocard_id" isInheritExtendedContractAttributes="false" name="Shocard" xmlns:urn="urn:sourceid.org:saml2:adapter:conf">
     <urn:Fields>
         <urn:Field name="PingOne Connection">mHCTUMkVUF6um3t7a5W1SS|e4b95dd3-a8e6-4507-80ab-d8bd6076560c</urn:Field>
-        <urn:Field name="PingOne Identity Population ID">1bb43021-8e8b-4d5a-a579-0a7112fc1a89</urn:Field>
-        <urn:Field name="PingOne Envrionment ID">2fd8c35a-b643-48ed-ab28-264bbb4fc56a</urn:Field>
-        <urn:Field name="PingOne Worker App Client ID">69ad71bf-f6af-4216-9d9f-64eae408dfea</urn:Field>
-        <urn:Field name="PingOne Worker App Client Secret">8eAuClJJFGm0RnKRRGcrP_ZgRmLjC9Ii_dgKOpuJ~k4WLem9J0d14b7jGxz5--tX</urn:Field>
+        <urn:Field name="PingOne Identity Population ID">eceb2688-584b-44e3-8147-55e9c129a874</urn:Field>
         <urn:Field name="HTML Form Template Name">shocard.login.form.template.html</urn:Field>
         <urn:Field name="Enable Registration">true</urn:Field>
         <urn:Field name="Display Claim Verification Form">true</urn:Field>
         <urn:Field name="View Shared Claims HTML Form Name">shocard.shared.claims.html</urn:Field>
-        <urn:Field name="PingOne API Base URL">https://api.pingone.com/v1/</urn:Field>
-        <urn:Field name="PingOne Authentication Base URL">https://auth.pingone.com/</urn:Field>
     </urn:Fields>
-    <urn:AdvancedFields>
-        <urn:Field name="PingOne API Base URL">https://api.pingone.com/v1/</urn:Field>
-        <urn:Field name="PingOne Authentication Base URL">https://auth.pingone.com/</urn:Field>
-    </urn:AdvancedFields>
+    <urn:AdvancedFields/>
     <urn:Tables>
         <urn:Table name="Register ShoCard Attributes">
             <urn:Row defaultRow="false">
