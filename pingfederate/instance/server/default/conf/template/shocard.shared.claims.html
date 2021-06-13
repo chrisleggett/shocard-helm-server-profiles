@@ -127,12 +127,13 @@ is not recommended as it may interfere with expected server behavior.
         <img src="assets/images/ShoCardLogo.png" style="width:50%"/>
     </div>
     <div class="ping-body-container">
-        <p style="font-size: 18px;">
-            $pluginTemplateMessages.getMessage("sharedClaimsBodyMessage")
-        </p>
         <form method="POST" action="$resumePath" autocomplete="off" id="claimform" name="claimform">
             <div style="text-align:center;">
                 <div id="claimDiv" style="margin:20px 20px; display:$displayClaimDiv; line-height: 60px;">
+                    <p style="font-size: 18px;">
+                        $pluginTemplateMessages.getMessage("sharedClaimsBodyMessage")
+                    </p>
+                    <br>
                     <table>
                         #foreach ($claimkey in $claimmap.keySet())
                         <tr>
@@ -146,6 +147,9 @@ is not recommended as it may interfere with expected server behavior.
                     <p>
                      Please wait as your ShoCard data is verified.
                     </p>
+                    <br>
+                    <br>
+                    <img src="assets/images/loading.gif" style="width:75px;">
                 </div>
             </div>
             <input type="hidden" name="$submit" id="$submit" value="$submitvalue"/>
@@ -162,16 +166,5 @@ is not recommended as it may interfere with expected server behavior.
         </div> <!-- .ping-footer -->
     </div> <!-- .ping-footer-container -->
 </div> <!-- .ping-container -->
-<script>
-
-//window.onload=function(){
-//    doVerifyPoll();
-//    var x = document.getElementById("claimDiv");
-//    if(x.style.display == "inline-block") {
-//        window.setTimeout(document.claimform.submit.bind(document.claimform), 3000);
-//    }
-//};
-
-</script>
 </body>
 </html>
