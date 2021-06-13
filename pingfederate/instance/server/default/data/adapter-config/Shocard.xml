@@ -3,6 +3,7 @@
     <urn:Fields>
         <urn:Field name="PingOne Connection">mHCTUMkVUF6um3t7a5W1SS|e4b95dd3-a8e6-4507-80ab-d8bd6076560c</urn:Field>
         <urn:Field name="PingOne Identity Population ID">eceb2688-584b-44e3-8147-55e9c129a874</urn:Field>
+        <urn:Field name="Authoritative Identity Provider ID">f1d9f13a-0c6d-4031-9922-270b3b9c1be9</urn:Field>
         <urn:Field name="HTML Form Template Name">shocard.login.form.template.html</urn:Field>
         <urn:Field name="Enable Registration">true</urn:Field>
         <urn:Field name="Display Claim Verification Form">true</urn:Field>
@@ -30,6 +31,11 @@
                 <urn:Field name="ShoCard Type">U.S. Driver License</urn:Field>
                 <urn:Field name="ShoCard Attribute Name">Country</urn:Field>
                 <urn:Field name="Adapter Attribute Name">Country</urn:Field>
+            </urn:Row>
+            <urn:Row defaultRow="false">
+                <urn:Field name="ShoCard Type">Profile ShoCard</urn:Field>
+                <urn:Field name="ShoCard Attribute Name">Selfie Image</urn:Field>
+                <urn:Field name="Adapter Attribute Name">Picture</urn:Field>
             </urn:Row>
         </urn:Table>
     </urn:Tables>
