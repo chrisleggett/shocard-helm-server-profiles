@@ -134,11 +134,11 @@ is not recommended as it may interfere with expected server behavior.
                         $pluginTemplateMessages.getMessage("sharedClaimsBodyMessage")
                     </p>
                     <br>
-                    <table>
+                    <table style="border-collapse: collapse;">
                         #foreach ($claimkey in $claimmap.keySet())
                         <tr>
-                            <td><b>$claimkey</b></td>
-                            <td>$claimmap.get($claimkey)</td>
+                            <td style="padding: 0;margin: 0;"><b>$claimkey</b></td>
+                            <td style="padding: 0;margin: 0;">$claimmap.get($claimkey)</td>
                         </tr>
                         #end
                     </table>
