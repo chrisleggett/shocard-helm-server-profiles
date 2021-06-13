@@ -172,7 +172,7 @@ async function doPoll(){
         if(data.action != "poll"){
             document.forms[0].submit();
         }
-        setTimeout(doPoll(logincode,regcode),30000);
+        setTimeout(doPoll(),30000);
     });
 }
 
