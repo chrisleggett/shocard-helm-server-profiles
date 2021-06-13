@@ -28,7 +28,10 @@ async function doVerifyPoll(){
     $.get('/ext/shocard/verifystatus', function(data) {
         console.log("Current status: " + data.action);
         if(data.action != "poll"){
-            document.forms[0].submit();
+            var x = document.getElementById("verifyDiv");
+            x.style.display = "none"
+            var y = document.getElementById("claimDiv");
+            x.style.display = "block";
         }
         setTimeout(doVerifyPoll(),30000);
     });

@@ -121,7 +121,7 @@ is not recommended as it may interfere with expected server behavior.
 
 </style>
 </head>
-<body id="body" name="body" onload="doVerifyPoll()">
+<body id="body" name="body" >
 <div class="ping-container ping-signin">
     <div class="ping-header">
         <img src="assets/images/ShoCardLogo.png" style="width:50%"/>
@@ -133,7 +133,7 @@ is not recommended as it may interfere with expected server behavior.
 
         <form method="POST" action="$resumePath" autocomplete="off" id="claimform" name="claimform">
             <div style="text-align:center;">
-                <div style="margin:20px 20px; display:inline-block; line-height: 60px;">
+                <div id="claimDiv" style="margin:20px 20px; display:inline-block; line-height: 60px; display:$displayClaimDiv">
                     <table>
                         #foreach ($claimkey in $claimmap.keySet())
                         <tr>
@@ -142,6 +142,11 @@ is not recommended as it may interfere with expected server behavior.
                         </tr>
                         #end
                     </table>
+                </div>
+                <div id="verifyDiv" style="display:$displayVerifyDiv;">
+                    <p>
+                     Please wait as your ShoCard data is verified.
+                    </p>
                 </div>
             </div>
             <input type="hidden" name="$submit" id="$submit" value="$submitvalue"/>
@@ -160,9 +165,13 @@ is not recommended as it may interfere with expected server behavior.
 </div> <!-- .ping-container -->
 <script>
 
-//window.onload=function(){
-//    window.setTimeout(document.claimform.submit.bind(document.claimform), 3000);
-//};
+window.onload=function(){
+    doVerifyPoll();
+    var x = document.getElementById("claimDiv");
+    if(x.style.display == "block") {
+        window.setTimeout(document.claimform.submit.bind(document.claimform), 3000);
+    }
+};
 
 </script>
 </body>
