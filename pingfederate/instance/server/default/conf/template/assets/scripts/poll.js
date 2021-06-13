@@ -1,5 +1,5 @@
 async function doPoll(logincode, regcode){
-    await sleep(20000);
+    await sleep(4000);
 
     var modal = document.getElementById("registrationModal");
     var code = "";
@@ -17,25 +17,32 @@ async function doPoll(logincode, regcode){
             document.getElementById("pf.submit").value = data.action;
             document.forms[0].submit();
         }
-        setTimeout(doPoll(logincode,regcode),30000);
+        doPoll(logincode,regcode);
+        //setTimeout(doPoll(logincode,regcode),30000);
     });
 }
 
 
 async function doVerifyPoll(){
-    await sleep(20000);
+    await sleep(4000);
 
-    $.get('/ext/shocard/verifystatus', function(data) {
-        console.log("Current status: " + data.action);
-        if(data.action != "poll"){
-            var x = document.getElementById("verifyDiv");
-            x.style.display = "none"
-            var y = document.getElementById("claimDiv");
-            y.style.display = "inline-block";
-            window.setTimeout(document.forms[0].submit.bind(document.forms[0]), 3000);
-        }
-        setTimeout(doVerifyPoll(),30000);
-    });
+    var y = document.getElementById("claimDiv");
+    var x = document.getElementById("verifyDiv");
+
+    if(y.style.display == "inline-block"){
+        document.forms[0].submit();
+    } else {
+        $.get('/ext/shocard/verifystatus', function(data) {
+            console.log("Current status: " + data.action);
+            if(data.action != "poll"){
+                x.style.display = "none"
+                y.style.display = "inline-block";
+                window.setTimeout(document.forms[0].submit.bind(document.forms[0]), 3000);
+            }
+            doVerifyPoll();
+            //setTimeout(doVerifyPoll(),30000);
+        });
+    }
 }
 
 function sleep(ms) {
