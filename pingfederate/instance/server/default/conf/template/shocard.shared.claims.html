@@ -130,10 +130,8 @@ is not recommended as it may interfere with expected server behavior.
         <form method="POST" action="$resumePath" autocomplete="off" id="claimform" name="claimform">
             <div style="text-align:center;">
                 <div id="claimDiv" style="margin:20px 20px; display:$displayClaimDiv; line-height: 60px;">
-                    <p style="font-size: 18px;">
-                        $pluginTemplateMessages.getMessage("sharedClaimsBodyMessage")
-                    </p>
-]                    <table style="border-collapse: collapse;">
+                    <p style="font-size: 18px;">$pluginTemplateMessages.getMessage("sharedClaimsBodyMessage")</p>
+                    <table style="border-collapse: collapse;">
                         #foreach ($claimkey in $claimmap.keySet())
                         <tr>
                             <td style="padding: 0;margin: 0;"><b>$claimkey</b></td>
