@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+#*
+The server renders this HTML page in an end-user's browser
+to display the username and list of core and extended attributes
+
+Velocity variables (identified by the $ character) are generated
+at runtime by the server.
+
+Change text or formatting as needed. Modifying Velocity statements
+is not recommended as it may interfere with expected server behavior.
+*#
+
+#set ( $d = "$")
+
+<html lang="$locale.getLanguage()" dir="ltr">
+<head>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" integrity="sha256-ihAoc6M/JPfrIiIeayPE9xjin4UWjsx2mjW/rtmxLM4=" crossorigin="anonymous"></script>
+    <script src="/assets/scripts/poll.js"></script>
+    <script type="text/javascript">
+
+        function postSubmit()
+        {
+            document.forms[0]['$submit'].value = 'clicked';
+            document.forms[0].submit();
+        }
+
+        function postCancel()
+        {
+            document.forms[0]['$cancel'].value = 'clicked';
+            document.forms[0].submit();
+        }
+
+        function postOnReturn(e)
+        {
+            var keycode;
+            if (window.event) keycode = window.event.keyCode;
+            else if (e) keycode = e.which;
+            else return true;
+
+            if (keycode == 13)
+            {
+                document.forms[0].submit();
+                return false;
+            }
+            else
+                return true;
+         }
+
+    </script>
+    <base href="$CurrentPingFedBaseURL"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>$pluginTemplateMessages.getMessage("title") Login</title>
+    <link rel="stylesheet" media="all" type="text/css" href="assets/css/main.css"/>
+    <style>
+/* The Modal (background) */
+    .reg-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .reg-modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    }
+
+    /* The Close Button */
+    .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    }
+
+    .column {
+        flex: 50%;
+        padding: 5px;
+        text-align: left;
+
+    }
+    .apple-column {
+        flex: 50%;
+        padding: 17px;
+        text-align: right;
+    }
+/* Clear floats after image containers */
+    .row {
+        display: flex;
+        flex-direction: row;
+        text-align:center;
+    }
+
+    th, td {
+        padding: 15px;
+    }
+    .table-header-cell {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+</style>
+</head>
+<body id="body" name="body" onload="doVerifyPoll();" >
+<div class="ping-container ping-signin">
+    <div class="ping-header">
+        <img src="assets/images/ShoCardLogo.png" style="width:50%"/>
+    </div>
+    <div class="ping-body-container">
+        <form method="POST" action="$resumePath" autocomplete="off" id="claimform" name="claimform">
+            <div style="text-align:center;">
+                <div id="claimDiv" style="margin:20px 20px; display:$displayClaimDiv; line-height: 60px;">
+                    <p style="font-size: 18px;">$pluginTemplateMessages.getMessage("sharedClaimsBodyMessage")</p>
+                    <table style="border-collapse: collapse;" border="0" cellspacing="0" cellpadding="0">
+                        #foreach ($claimkey in $claimmap.keySet())
+                            <tr>
+                                <td style="padding: 0;margin: 0;"><b>$claimkey</b></td>
+                                #if($claimkey == "CardImage")
+                                    <td style="padding: 0;margin: 0;">
+                                        <img src="$claimmap.get($claimkey)" style="width:50%;">
+                                    </td>
+                                #else
+                                    <td style="padding: 0;margin: 0;">$claimmap.get($claimkey)</td>
+                                #end
+                            </tr>
+                        #end
+                    </table>
+                </div>
+                <div id="verifyDiv" style="display:$displayVerifyDiv;">
+                    <p>
+                     Please wait as your ShoCard data is verified.
+                    </p>
+                    <img src="assets/images/loading.gif" style="width:75px;">
+                </div>
+            </div>
+            <input type="hidden" name="$submit" id="$submit" value="$submitvalue"/>
+            <input type="hidden" name="$cancel" id="$cancel" value=""/>
+        </form>
+    </div>
+    <br><br>
+    <div class="ping-footer-container">
+        <div class="ping-footer">
+            <div class="ping-credits"></div>
+            <!--
+            <div class="ping-copyright">$templateMessages.getMessage("global.footerMessage")</div>
+            -->
+        </div> <!-- .ping-footer -->
+    </div> <!-- .ping-footer-container -->
+</div> <!-- .ping-container -->
+</body>
+</html>
