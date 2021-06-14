@@ -55,7 +55,7 @@ is not recommended as it may interfere with expected server behavior.
   <style>
 /* The Modal (background) */
     .reg-modal {
-    display: none; /* Hidden by default */
+    display: $displayReg; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 100px; /* Location of the box */
@@ -185,6 +185,10 @@ is not recommended as it may interfere with expected server behavior.
       </div>
       <input type="hidden" name="$submit" id="$submit" value=""/>
       <input type="hidden" name="$cancel" id="$cancel" value=""/>
+      <input type="hidden" name="loginQrCodeUrl" id="loginQrCodeUrl" value="$loginQrCodeUrl" />
+      <input type="hidden" name="registerQrCodeUrl" id="registerQrCodeUrl" value="$registerQrCodeUrl" />
+      <input type="hidden" name="regSessionId" id="regSessionId" value="$regSessionId" />
+      <input type="hidden" name="loginSessionId" id="loginSessionId" value="$loginSessionId" />
     </form>
   </div>
   <br><br>
