@@ -34,8 +34,8 @@
             </urn:Row>
             <urn:Row defaultRow="false">
                 <urn:Field name="ShoCard Type">Profile ShoCard</urn:Field>
-                <urn:Field name="ShoCard Attribute Name">Selfie Image</urn:Field>
-                <urn:Field name="Adapter Attribute Name">Picture</urn:Field>
+                <urn:Field name="ShoCard Attribute Name">CardImage</urn:Field>
+                <urn:Field name="Adapter Attribute Name">Selfie</urn:Field>
             </urn:Row>
         </urn:Table>
     </urn:Tables>
@@ -43,6 +43,7 @@
         <urn:AttributeName>First_Name</urn:AttributeName>
         <urn:AttributeName>Birth_Date</urn:AttributeName>
         <urn:AttributeName>Last_Name</urn:AttributeName>
+        <urn:AttributeName>Selfie</urn:AttributeName>
     </urn:ExtendedContractAttributes>
     <urn:UniqueKeyField>shocard_id</urn:UniqueKeyField>
     <urn:AttributeMapping>
@@ -50,6 +51,7 @@
         <urn1:AttributeMap Name="shocard_id" Type="Adapter" Value="shocard_id" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
         <urn1:AttributeMap Name="Birth_Date" Type="Adapter" Value="Birth_Date" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
         <urn1:AttributeMap Name="Last_Name" Type="Adapter" Value="Last_Name" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
+        <urn1:AttributeMap Name="Selfie" Type="Adapter" Value="Selfie" xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
         <urn1:TokenAuthorizationIssuanceCriteria xmlns:urn1="urn:sourceid.org:saml2:metadata-extension:v2"/>
     </urn:AttributeMapping>
 </urn:AdapterConfiguration>

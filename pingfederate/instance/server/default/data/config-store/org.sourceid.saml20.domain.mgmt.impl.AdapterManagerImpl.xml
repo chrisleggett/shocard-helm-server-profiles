@@ -4,4 +4,7 @@
         <con:item name="HTMLFormPD">com.pingidentity.adapters.htmlform.idp.HtmlFormIdpAuthnAdapter</con:item>
         <con:item name="Shocard">com.pingidentity.adapter.idp.shocard.ShocardLoginRegisterAdapter</con:item>
     </con:map>
+    <con:map name="SpAuthnAdapterInstances">
+        <con:item name="ReferenceID">com.pingidentity.pf.adapters.referenceid.SpBackchannelReferenceAuthnAdapter</con:item>
+    </con:map>
 </con:config>
