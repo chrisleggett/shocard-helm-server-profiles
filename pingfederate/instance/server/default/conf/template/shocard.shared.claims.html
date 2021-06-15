@@ -61,14 +61,16 @@ Modifying Velocity statements is not recommended as it may interfere with expect
                         <div>
                             <span style="font-weight:bold;">$claimmap.get("First Name") $claimmap.get("Last Name")</span>
                         </div>
-                        #if($claimmap.get("Birth Date"))
+                        #set ($birthDate = $map.get('Birth Date'))
+                        #if($birthDate)
                         <div>
-                            <span>$claimmap.get("Birth Date")</span>
+                            <span>$birthDate</span>
                         </div>
                         #end
-                        if($claimmap.get("Country"))
+                        #set ($country = $map.get('Country'))
+                        if($country)
                         <div>
-                            <span>$claimmap.get("Country")</span>
+                            <span>$country</span>
                         </div>
                         #end
                     </div>
