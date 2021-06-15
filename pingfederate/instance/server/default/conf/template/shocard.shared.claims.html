@@ -59,15 +59,15 @@ Modifying Velocity statements is not recommended as it may interfere with expect
                             <img src="$claimmap.get('CardImage')" style="width:50%;">
                         </div>
                         <div>
-                            <span style="font-weight:bold;">$claimmap.get("First Name") $claimmap.get("Last Name")</span>
+                            <span style="font-weight:bold;">$claimmap.get('First Name') $claimmap.get('Last Name')</span>
                         </div>
-                        #set ($birthDate = $map.get('Birth Date'))
+                        #set ($birthDate = $claimmap.get('Birth Date'))
                         #if($birthDate)
                         <div>
                             <span>$birthDate</span>
                         </div>
                         #end
-                        #set ($country = $map.get('Country'))
+                        #set ($country = $claimmap.get('Country'))
                         if($country)
                         <div>
                             <span>$country</span>
