@@ -61,9 +61,12 @@ Modifying Velocity statements is not recommended as it may interfere with expect
                         <div>
                             <span style="font-weight:bold;">$claimmap.get('First Name') $claimmap.get('Last Name')</span>
                         </div>
+                        #if($claimmap.get('Birth Date'))
                         <div>
                             <span>$claimmap.get('Birth Date')</span>
                         </div>
+                        #end
+                        #if($claimmap.get('Country'))
                         <div>
                             <span>$claimmap.get('Country')</span>
                         </div>
@@ -71,7 +74,7 @@ Modifying Velocity statements is not recommended as it may interfere with expect
                     </div>
                 </div>
                 <div id="verifyDiv" style="display:$displayVerifyDiv;">
-                    <span style="font-weight:bold;">Please wait as your ShoCard data is verified.</span>
+                    <span style="font-weight:bold;">Please wait. Your Identity is being verified.</span>
                     <div style="padding: 10%">
                         <img src="assets/images/loading.gif" style="width:75px;">
                     </div>

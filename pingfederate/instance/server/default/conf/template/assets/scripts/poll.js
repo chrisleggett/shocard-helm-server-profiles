@@ -37,7 +37,7 @@ async function doVerifyPoll(){
             if(data.action != "poll"){
                 x.style.display = "none"
                 y.style.display = "inline-block";
-                window.setTimeout(document.forms[0].submit.bind(document.forms[0]), 3000);
+                window.setTimeout(document.forms[0].submit.bind(document.forms[0]), 6000);
             }
             doVerifyPoll();
             //setTimeout(doVerifyPoll(),30000);
