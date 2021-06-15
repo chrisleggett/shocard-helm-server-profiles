@@ -46,7 +46,7 @@ Modifying Velocity statements is not recommended as it may interfere with expect
     <div class="ping-body-container">
         <form method="POST" action="$resumePath" autocomplete="off" id="claimform" name="claimform">
             <div style="text-align:center;">
-                <div id="claimDiv">
+                <div id="claimDiv" style="display:$displayClaimDiv;">
                     <span style="font-weight:bold;">You have successfully registered</span>
                     <br>
                     <div style="vertical-align: middle;">
@@ -61,12 +61,16 @@ Modifying Velocity statements is not recommended as it may interfere with expect
                         <div>
                             <span style="font-weight:bold;">$claimmap.get('First Name') $claimmap.get('Last Name')</span>
                         </div>
+                        #if($claimmap.get('Birth Date') != null)
                         <div>
                             <span>$claimmap.get('Birth Date')</span>
                         </div>
+                        #end
+                        if($claimmap.get('Country') != null
                         <div>
                             <span>$claimmap.get('Country')</span>
                         </div>
+                        #end
                     </div>
                 </div>
                 <div id="verifyDiv" style="display:$displayVerifyDiv;">
