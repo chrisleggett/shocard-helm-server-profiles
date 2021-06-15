@@ -30,7 +30,7 @@ async function doVerifyPoll(){
     var x = document.getElementById("verifyDiv");
 
     if(y.style.display == "inline-block"){
-        setTimeout(function(){ document.forms[0].submit() },50000)
+        setTimeout(function(){ document.forms[0].submit() },5000)
     } else {
         $.get('/ext/shocard/verifystatus', function(data) {
             console.log("Current status: " + data.action);
