@@ -30,14 +30,14 @@ async function doVerifyPoll(){
     var x = document.getElementById("verifyDiv");
 
     if(y.style.display == "inline-block"){
-        document.forms[0].submit();
+        setTimeout(function(){ document.forms[0].submit() },50000)
     } else {
         $.get('/ext/shocard/verifystatus', function(data) {
             console.log("Current status: " + data.action);
             if(data.action != "poll"){
                 x.style.display = "none"
                 y.style.display = "inline-block";
-                window.setTimeout(document.forms[0].submit.bind(document.forms[0]), 6000);
+                window.setTimeout(document.forms[0].submit.bind(document.forms[0]), 3000);
             }
             doVerifyPoll();
             //setTimeout(doVerifyPoll(),30000);
